@@ -82,17 +82,30 @@
                     <p class="jura mt-3 ms-md-2">fig: cyr0x</p>
                 </div>
                 <div class="text-center text-md-end parent-container">
-                    <p class="jura text-custom glass">Info</p>
+                    <p class="jura text-custom glass" id="info-btn">Info</p>
                     <p class="jura text-custom">Projects</p>
                     <p class="jura text-custom">Resume</p>
                 </div>
             </div>
         </div>
-
+        <div id="my-modal">@include('modal')</div>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"
         ></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const infoBtn = document.getElementById("info-btn");
+                const modal = document.querySelector(".custom-modal");
+                const closeBtn = document.getElementById("btn-close");
+                infoBtn.addEventListener("click", function () {
+                    modal.classList.add("show");
+                });
+                closeBtn.addEventListener("click", function () {
+                    modal.classList.remove("show");
+                });
+            });
+        </script>
     </body>
 </html>
