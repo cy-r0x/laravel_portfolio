@@ -1,0 +1,134 @@
+:root {
+    --bs-custom: #fff8e7;
+}
+
+* {
+    background-color: var(--bs-custom);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.avatar {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.jura {
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    color: #2b2b2b;
+    font-weight: 700;
+}
+
+.parent-container {
+    perspective: 600px;
+}
+
+.text-custom {
+    font-weight: 700;
+    font-size: 4rem;
+    cursor: pointer;
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1),
+        background 400ms ease-in-out, box-shadow 400ms ease-in-out,
+        padding 400ms ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.text-custom:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    transform: rotateY(-30deg);
+    padding: 0px 20px;
+}
+
+.main-content {
+    padding: 0 6rem;
+    padding-top: 8rem;
+}
+
+.icons {
+    border: none;
+    background: transparent;
+    transition: transform ease-in-out 300ms;
+}
+
+.icons:hover {
+    transform: scale(110%);
+}
+
+.cover {
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px #2b2b2b;
+}
+
+@media (max-width: 1200px) {
+    .text-custom {
+        font-size: 3.5rem;
+    }
+    .main-content {
+        padding: 0 4rem;
+        padding-top: 6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .text-custom {
+        font-size: 3rem;
+    }
+    .main-content {
+        padding: 0 3rem;
+        padding-top: 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 2rem;
+        gap: 3rem;
+    }
+
+    .text-custom {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .parent-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 2rem 1rem;
+    }
+
+    .text-custom {
+        font-size: 2rem;
+    }
+
+    .avatar {
+        width: 12rem;
+        height: 12rem;
+    }
+}
