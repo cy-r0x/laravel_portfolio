@@ -14,15 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view("welcome");
+    return view('home');
+})->name('home');
+
+Route::get('/projects', function () {
+    return view('projects');
+})->name('projects');
+
+Route::get('/resume', function () {
+    return view('resume');
+})->name('resume');
+
+// Keep this route for backward compatibility
+Route::get('/welcome', function () {
+    return view('welcome');
 });
 
-
-Route::get("/home",function(){
-    return view("home");
-});
-
-Route::get("/lp1",function(){
-    return view("lp1");
-});
+// Legacy routes - consider removing or updating these later
+Route::get('/lp1', function () {
+    return view('lp1');
+})->name('lp1');
 
